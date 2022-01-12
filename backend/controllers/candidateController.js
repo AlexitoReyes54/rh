@@ -24,19 +24,20 @@ const getAllCandidates =  async (req,res) => {
 
 const addCandidate = async (req,res) => {
     try {
-        let { company,salary,startDate,endDate,position } = req.body
-        await Candidate.create({company,salary,startDate,endDate,position});
+        let { name,document,departament,positionAspire,salaryAspire } = req.body
+        await Candidate.create({name,document,departament,positionAspire,salaryAspire});
         res.json({status:'ok'})
     } catch (error) {
         console.log("error");
     }
 }
 
+
 const putCandidate = async (req,res) =>{
     try {
-        let { company,salary,startDate,endDate,position,id } = req.body
+        let {name,document,departament,positionAspire,salaryAspire,id } = req.body
         let candidates = await Candidate.findOne({where:{id}});
-        await candidates.update({company,salary,startDate,endDate,position,id });
+        await candidates.update({name,document,departament,positionAspire,salaryAspire });
         res.json({status:'ok'})
     } catch (error) {
         console.log(error);
