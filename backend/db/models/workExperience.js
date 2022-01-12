@@ -24,6 +24,10 @@ const workExperience = sequelize.define('work-experience', {
   endDate: {
     type: DataTypes.DATE,
     allowNull: false
+  },
+  position: {
+    type: DataTypes.STRING,
+    allowNull: false
   }
 }, {
   // Other model options go here

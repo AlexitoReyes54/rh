@@ -29,6 +29,20 @@ var {
     deletePosition,
     putPosition
     } = require('../controllers/positionController')
+var {
+    getWorkExperience,
+    addWorkExperience,
+    getAllWorkExperiences,
+    deleteWorkExperience,
+    putWorkExperience
+    } = require('../controllers/workExperienceController')
+var {
+    getCandidate,
+    addCandidate,
+    getAllCandidates,
+    deleteCandidate,
+    putCandidate
+    } = require('../controllers/candidateController')
 
 //competence 
 router.get('/competence',getAllCompentences);
@@ -57,6 +71,20 @@ router.get('/position/:id',getPosition);
 router.post('/position',addPosition)
 router.put('/position',putPosition)
 router.delete('/position/:id',deletePosition)
+
+//work expereience 
+router.get('/work',getAllWorkExperiences);
+router.get('/work/:id',getWorkExperience);
+router.post('/work',addWorkExperience)
+router.put('/work',putWorkExperience)
+router.delete('/work/:id',deleteWorkExperience)
+
+//candidate
+router.get('/candidate',getAllCandidates);
+router.get('/candidate/:id',getCandidate);
+router.post('/candidate',addCandidate)
+router.put('/candidate',putCandidate)
+router.delete('/candidate/:id',deleteCandidate)
 
 router.get('/',(req,res) =>{
     console.log(req.body);
