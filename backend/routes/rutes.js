@@ -1,10 +1,13 @@
 var express = require('express')
 var router = express.Router()
-var {getCompetence,
+
+var {
+    getCompetence,
     addCompetence,
     getAllCompentences,
     deleteCompentence,
-    putCompentence} = require('../controllers/competenceController')
+    putCompentence
+    } = require('../controllers/competenceController')
 var {
     getLanguage,
     addLanguage,
@@ -19,6 +22,13 @@ var {
     deleteTraining,
     putTraining
     } = require('../controllers/trainingController')
+var {
+    getPosition,
+    addPosition,
+    getAllPositions,
+    deletePosition,
+    putPosition
+    } = require('../controllers/positionController')
 
 //competence 
 router.get('/competence',getAllCompentences);
@@ -41,6 +51,12 @@ router.post('/training',addTraining)
 router.put('/training',putTraining)
 router.delete('/training/:id',deleteTraining)
 
+//position 
+router.get('/position',getAllPositions);
+router.get('/position/:id',getPosition);
+router.post('/position',addPosition)
+router.put('/position',putPosition)
+router.delete('/position/:id',deletePosition)
 
 router.get('/',(req,res) =>{
     console.log(req.body);
