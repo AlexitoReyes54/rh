@@ -1,14 +1,15 @@
 const express = require('express')
 const app = express()
 const port = 3000
-
 const { connectToDatabase } = require('./db/dbConnection')
 const syncDatabase  = require('./db/syncDatabase')
-syncDatabase()
-app.get('/', (req, res) => {
-  res.send('Hello World!')
-})
+const rutes = require('./routes/rutes')
 
+//syncDatabase()
+
+app.use(express.json())
+app.use(express.urlencoded({ extended: true }))
+app.use('/',rutes);
 
 if (connectToDatabase()) {
     app.listen(port, () => {

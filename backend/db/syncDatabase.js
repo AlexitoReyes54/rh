@@ -16,7 +16,6 @@ function syncDatabase() {
     Candidate.hasMany(Competence)
     Candidate.hasOne(Position)
 
-    
     sequelize.sync({force:false})
     .then((res) => console.log("Sycncronized"))
     .catch(err => console.log(err))
