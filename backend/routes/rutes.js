@@ -12,7 +12,13 @@ var {
     deleteLanguage,
     putLanguage
     } = require('../controllers/languageController')
-
+var {
+    getTraining,
+    addTraining,
+    getAllTrainings,
+    deleteTraining,
+    putTraining
+    } = require('../controllers/trainingController')
 
 //competence 
 router.get('/competence',getAllCompentences);
@@ -27,6 +33,13 @@ router.get('/languange/:id',getLanguage);
 router.post('/languange',addLanguage)
 router.put('/languange',putLanguage)
 router.delete('/languange/:id',deleteLanguage)
+
+//training 
+router.get('/training',getAllTrainings);
+router.get('/training/:id',getTraining);
+router.post('/training',addTraining)
+router.put('/training',putTraining)
+router.delete('/training/:id',deleteTraining)
 
 
 router.get('/',(req,res) =>{
