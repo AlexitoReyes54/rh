@@ -34,9 +34,9 @@ const addLanguage = async (req,res) => {
 
 const putLanguage = async (req,res) =>{
     try {
-        let { name,id } = req.body;
+        let { name,id,state } = req.body;
         let languages = await Language.findOne({where:{id}});
-        await languages.update({name});
+        await languages.update({name,state});
         res.json({status:'ok'})
     } catch (error) {
         console.log(error);

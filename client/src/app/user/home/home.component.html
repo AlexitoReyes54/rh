@@ -1,0 +1,24 @@
+<nav class="nav">
+    <a class="nav-link active" aria-current="page" routerLink="/home" >Trabajos</a>
+    <a class="nav-link" routerLink="/aptitudes" >Aptitudes</a>
+    <a (click)="signout()" class="nav-link" routerLink="/login" >Cerrar session</a>
+  </nav>
+
+<div class="container">
+
+  <h1 id="hired" hidden="true" >Ya estas contratado</h1>
+
+  <div id="jobs" class="card" *ngFor="let job of jobs">
+    <div class="card-header">
+      {{job.name}}
+    </div>
+    <div class="card-body">
+      <h5 class="card-title">Riesgo: {{job.riskLevel}}</h5>
+      <p class="card-text">Rango salarial: {{job.minimumSalary}}$ - {{job.maximunSalary}}$</p>
+      <button (click)="applyJob(job.id)" class="btn btn-primary">Aplicar</button> 
+    </div>
+  </div>
+
+</div>
+  
+

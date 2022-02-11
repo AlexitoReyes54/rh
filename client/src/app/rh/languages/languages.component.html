@@ -1,0 +1,16 @@
+<br><br>
+<div class="container">
+    <div class="mb-3">
+        <label class="form-label">Nombre del idioma</label>
+        <input type="text" class="form-control" placeholder="" [formControl]="name">
+      </div>
+
+      <div class="form-check">
+        <input class="form-check-input" type="checkbox" [formControl]="able" > 
+        <label class="form-check-label">
+          Disponible
+        </label>
+      </div>
+
+      <button type="button" class="btn btn-primary" (click)="clickBtn()">Enviar</button>
+</div>

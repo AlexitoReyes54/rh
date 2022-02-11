@@ -1,0 +1,130 @@
+<nav class="nav">
+  <a href="http://localhost:3000/report" >
+  <button type="button" class="btn btn-success">Descargar reporte de empleados</button></a>
+  <a  (click)="signout()" class="nav-link" routerLink="/login"   >Cerrar session</a>
+</nav><br>
+
+<mat-tab-group mat-align-tabs="center">
+    <mat-tab label="Idiomas">
+      <div class="container rhSection">
+                
+        <div class="flex">
+          
+          <button routerLink="/languages/0" type="button" class="btn btn-primary createBtn">Crear lenguage</button>
+          <div>
+            <input type="text"  id="search" [formControl]="search">
+            <button (click)="searchLanguage()" type="button" class="btn btn-primary createBtn">Buscar</button>
+            <button (click)="loadLanguages()" type="button" class="btn btn-primary createBtn">Reset</button>
+          </div>
+          </div>
+
+        <table class="table">
+          <thead>
+            <tr>
+              <th scope="col">#</th>
+              <th scope="col">nombre</th>
+              <th scope="col"></th>
+            </tr>
+          </thead>
+          <tbody>
+
+            <tr *ngFor="let lang of languages">
+              <th scope="row">{{lang.id}}</th>
+              <td >{{lang.name}}</td>
+              <td>
+                <button routerLink="/languages/{{lang.id}}" type="button" class="btn btn-warning">Editar</button>
+                <button (click)="deleteLang(lang.id)" type="button" class="btn btn-danger">Eliminar</button>
+              </td>
+            </tr>
+            
+          </tbody>
+        </table>
+      </div>
+
+    </mat-tab>
+    <mat-tab label="Puestos">
+        <div class="container rhSection">
+        <button  routerLink="/positions/0" type="button" class="btn btn-primary createBtn">Crear puesto</button>
+  
+        <table class="table">
+          <thead>
+            <tr>
+              <th scope="col">#</th>
+              <th scope="col">nombre</th>
+              <th scope="col">nivel de riesgo</th>
+              <th scope="col">salario minimo</th>
+              <th scope="col">salario maximo</th>
+              <th scope="col"></th>
+            </tr>
+          </thead>
+          <tbody>
+            <tr *ngFor="let pos of positions">
+              <th scope="row">{{pos.name}}</th>
+              <td>{{pos.id}}</td>
+              <td>{{pos.riskLevel}}</td>
+              <td>{{pos.minimumSalary}}</td>
+              <td>{{pos.maximunSalary}}</td>
+              <td>
+                <button routerLink="/positions/{{pos.id}}" type="button" class="btn btn-warning">Editar</button>
+                <button (click)="deletePosition(pos.id)" type="button" class="btn btn-danger">Eliminar</button>
+              </td>
+            </tr>
+         
+          </tbody>
+        </table>
+      </div>
+      
+    </mat-tab>
+    <mat-tab label="Competencias">
+        <div class="container rhSection">
+            <button routerLink="/competences/0" type="button" class="btn btn-primary createBtn">Crear competencias</button>
+      
+            <table class="table">
+              <thead>
+                <tr>
+                  <th scope="col">#</th>
+                  <th scope="col">descripcion</th>
+                  <th scope="col"></th>
+                </tr>
+              </thead>
+              <tbody>
+
+                <tr *ngFor="let comp of competences">
+                  <th scope="row">{{comp.id}}</th>
+                  <td >{{comp.description}}</td>
+                  <td>
+                    <button routerLink="/competences/{{comp.id}}" type="button" class="btn btn-warning">Editar</button>
+                    <button (click)="deleteCompetence(comp.id)" type="button" class="btn btn-danger">Eliminar</button>
+                  </td>
+                </tr>
+
+              </tbody>
+            </table>
+          </div>
+    </mat-tab>
+    <mat-tab label="Postulantes">
+        <div class="container rhSection">
+            <button routerLink="/aplicants/2" type="button" class="btn btn-primary createBtn">Crear postulantes</button>
+      
+            <table class="table">
+              <thead>
+                <tr>
+                  <th scope="col">#</th>
+                  <th scope="col">Nombre candidato</th>
+                  <th scope="col">Puesto</th>
+                </tr>
+              </thead>
+              <tbody>
+                <tr *ngFor="let postulante of postulantes">
+                  <th scope="row">{{postulante.id}}</th>
+                  <td >{{postulante.name}}</td>
+                  <td >{{postulante.positionAspire}}</td>
+                  <td>
+                    <button routerLink="/aplicants/{{postulante.id}}" type="button" class="btn btn-warning">Ver detalle</button>
+                  </td>
+                </tr>
+              </tbody>
+            </table>
+          </div>
+    </mat-tab>
+  </mat-tab-group>

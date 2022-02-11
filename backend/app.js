@@ -5,11 +5,13 @@ const { connectToDatabase } = require('./db/dbConnection')
 const syncDatabase  = require('./db/syncDatabase')
 const rutes = require('./routes/rutes')
 
+const {createReport} = require('./helpers/excel')
 //syncDatabase()
 
 app.use(express.json())
 app.use(express.urlencoded({ extended: true }))
 app.use('/',rutes);
+
 
 if (connectToDatabase()) {
     app.listen(port, () => {

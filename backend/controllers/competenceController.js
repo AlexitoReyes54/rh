@@ -34,9 +34,9 @@ const Competence = require('../db/models/competence')
 
     const putCompentence = async (req,res) =>{
         try {
-            let { description,id } = req.body;
+            let { description,id,state } = req.body;
             let competences = await Competence.findOne({where:{id}});
-            await competences.update({description});
+            await competences.update({description,state});
             res.json({status:'ok'})
         } catch (error) {
             console.log(error);

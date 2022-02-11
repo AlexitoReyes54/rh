@@ -1,0 +1,32 @@
+<br><br>
+<div class="container">
+
+    <div class="mb-3">
+        <label class="form-label">Nombre del compañia</label>
+        <input type="text" class="form-control" placeholder="" [formControl]="company">
+      </div>
+
+      <div class="mb-3">
+        <label class="form-label">Posicion</label>
+        <input type="text" class="form-control" placeholder="" [formControl]="position">
+      </div>
+
+      <div class="mb-3">
+        <label class="form-label">Salario</label>
+        <input type="number" class="form-control" placeholder="" [formControl]="salary">
+      </div>
+    
+      <div class="mb-3">
+        <label class="form-label">Fecha de inicio</label>
+        <input type="date" class="form-control" placeholder="" [formControl]="startDate">
+      </div>
+
+      <div class="mb-3">
+        <label class="form-label">Fecha de finalizacion</label>
+        <input type="date" class="form-control" placeholder="" [formControl]="endDate">
+      </div>
+
+      
+
+      <button type="button" class="btn btn-primary" (click)="clickBtn()">Enviar</button>
+</div>

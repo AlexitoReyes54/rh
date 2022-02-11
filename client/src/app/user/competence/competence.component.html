@@ -1,0 +1,42 @@
+<br><br>
+<div class="container">
+    <div class="mb-3">
+        <label class="form-label">Nombre</label>
+        <input type="text" class="form-control" placeholder="" [formControl]="description">
+      </div>
+
+      <div class="mb-3">
+        <label class="form-label">grado</label>
+        <select class="form-select" aria-label="Default select example" [formControl]="level">
+            <option selected value="Gestión">Gestión</option>
+            <option value="Grado">Grado</option>
+            <option value="Post-grado">Post-grado</option>
+            <option value="Maestría Doctorado">Maestría Doctorado</option>
+            <option value="Técnico">Técnico</option>
+          </select>
+      </div>
+
+      <div class="mb-3">
+        <label class="form-label">Institucion</label>
+        <input type="text" class="form-control" placeholder="" [formControl]="institucion">
+      </div>
+
+      <div class="mb-3">
+        <label class="form-label">Fecha de inicio</label>
+        <input type="date" class="form-control" placeholder="" [formControl]="startDate">
+      </div>
+
+      <div class="mb-3">
+        <label class="form-label">Fecha de finalizacion</label>
+        <input type="date" class="form-control" placeholder="" [formControl]="endDate">
+      </div>
+
+      <div class="form-check">
+        <input class="form-check-input" type="checkbox" [formControl]="able" > 
+        <label class="form-check-label">
+          Disponible
+        </label>
+      </div>
+
+      <button type="button" class="btn btn-primary" (click)="clickBtn()">Enviar</button>
+</div>

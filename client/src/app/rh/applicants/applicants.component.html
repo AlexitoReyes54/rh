@@ -1,0 +1,23 @@
+<br><br><br>
+<div class="container">
+    <div class="row">
+        <div class="col-md-4">
+            <h3>Informacion del candidato</h3>
+            <p>Nombre: {{candidate.name}}</p>
+            <p>Cedula: {{candidate.document}}</p>
+            <p>Departamento: {{candidate.departament}}</p>
+            <p>Salario al que aspira: {{candidate.salaryAspire}}</p>
+        </div>
+        <div class="col-md-4">
+            <h3>Informacion del puesto</h3>
+            <p>Nombre: {{position.name}}</p>
+            <p>Riesgo: {{position.riskLevel}}</p>
+            <p>Salario minimo: {{position.minimumSalary}}</p>
+            <p>Salario maximo: {{position.maximunSalary}}</p>
+        </div>
+        <div class="col-md-4">
+            <button (click)="createEmployee()" type="button" class="btn btn-success">Aceptar</button>
+            <button (click)="reject()" type="button" class="btn btn-danger">Declinar</button>
+        </div>
+    </div>
+</div>

@@ -1,0 +1,22 @@
+<div class="container space">
+    <div class="row">
+        <div class="col"></div>
+        <div class="col">
+            <div>
+                <div class="mb-3">
+                  <label class="form-label">Nombre de usuario</label>
+                  <input class="form-control" aria-describedby="emailHelp" [formControl]="name" >
+                </div>
+                <div class="mb-3">
+                  <label class="form-label">Password</label>
+                  <input type="password" class="form-control"  [formControl]="password"  >
+                </div>
+                <button (click)="clickBtn()" class="btn btn-primary">Submit</button>
+              </div>
+              <br>
+              <a routerLink="/candidate">Crear cuenta de candidato</a>
+        </div>
+        <div class="col"></div>
+      </div>
+    
+</div>

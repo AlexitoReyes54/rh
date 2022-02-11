@@ -34,9 +34,9 @@ const addPosition = async (req,res) => {
 
 const putPosition = async (req,res) =>{
     try {
-        let { maximunSalary,id,riskLevel,minimumSalary,name } = req.body;
+        let { maximunSalary,id,riskLevel,minimumSalary,name,state } = req.body;
         let positions = await Position.findOne({where:{id}});
-        await positions.update({maximunSalary,minimumSalary,riskLevel,name});
+        await positions.update({maximunSalary,minimumSalary,riskLevel,name,state});
         res.json({status:'ok'})
     } catch (error) {
         console.log(error);

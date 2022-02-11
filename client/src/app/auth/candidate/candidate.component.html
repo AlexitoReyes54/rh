@@ -1,0 +1,30 @@
+<br><br>
+<div class="container">
+    <div class="mb-3">
+        <div class="mb-3">
+            <label class="form-label">Nombre </label>
+            <input required type="text" class="form-control" placeholder="" [formControl]="name">
+          </div>
+
+
+          <div class="mb-3">
+            <label class="form-label">Cedula</label>
+            <input type="text" class="form-control" placeholder="" [formControl]="document">
+          </div>
+
+          <div class="mb-3">
+            <label class="form-label">Departemento</label>
+            <input type="text" class="form-control" placeholder="" [formControl]="departament">
+          </div>
+
+
+          <div class="mb-3">
+            <label class="form-label">Salario al que aspira</label>
+            <input type="number" class="form-control" placeholder="" [formControl]="salaryAspire">
+          </div>
+      
+
+      
+
+      <button type="button" class="btn btn-primary"  (click)="clickBtn()" >Enviar</button>
+</div>

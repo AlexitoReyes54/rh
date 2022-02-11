@@ -1,0 +1,66 @@
+<nav class="nav">
+    <a class="nav-link active" aria-current="page" routerLink="/home" >Trabajos</a>
+    <a  class="nav-link" routerLink="/aptitudes" >Aptitudes</a>
+    <a  (click)="signout()" class="nav-link" routerLink="/login" >Cerrar session</a>
+    
+  </nav>
+  <mat-tab-group  mat-align-tabs="center">
+    <mat-tab label="Experiencia laboral"> 
+        <div class="container rhSection">
+        <button  routerLink="/experience/0" type="button" class="btn btn-primary createBtn">Agregar experienca laboral</button>
+  
+        <table class="table">
+          <thead>
+            <tr>
+              <th scope="col">#</th>
+              <th scope="col">Empresa</th>
+              <th scope="col">Posicion</th>
+              
+              <th scope="col"></th>
+            </tr>
+          </thead>
+          <tbody>
+            <tr *ngFor="let work of works">
+              <th scope="row">{{work.id}}</th>
+              <td>{{work.company}}</td>
+              <td>{{work.position}}</td>
+              <td>
+                <button routerLink="/experience/{{work.id}}" type="button" class="btn btn-warning">Editar</button>
+                <button (click)="deleteWork(work.id)" type="button" class="btn btn-danger">Eliminar</button>
+              </td>
+            </tr>
+         
+          </tbody>
+        </table>
+      </div> 
+    </mat-tab>
+    <mat-tab label="Capacitaciones"> 
+        <div class="container rhSection">
+            <button  routerLink="/competence/0" type="button" class="btn btn-primary createBtn">Agregar capacitacion</button>
+      
+            <table class="table">
+              <thead>
+                <tr>
+                  <th scope="col">#</th>
+                  <th scope="col">Descripcion</th>
+                  <th scope="col">Institucion</th>
+                  <th scope="col"></th>
+                </tr>
+              </thead>
+              <tbody>
+                <tr *ngFor="let training of trainings" >
+                  <th scope="row">{{training.id}}</th>
+                  <td>{{training.description}}</td>
+                  <td>{{training.institucion}}</td>
+                  <td>
+                    <button routerLink="/competence/{{training.id}}" type="button" class="btn btn-warning">Editar</button>
+                    <button (click)="deleteTraining(training.id)"  type="button" class="btn btn-danger">Eliminar</button>
+                  </td>
+                </tr>
+             
+              </tbody>
+            </table>
+          </div> 
+         </mat-tab>
+  </mat-tab-group>
+  

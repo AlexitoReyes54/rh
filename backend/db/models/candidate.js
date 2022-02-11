@@ -21,7 +21,7 @@ const Candidate = sequelize.define('Candidate', {
     allowNull: false
   },
   positionAspire: {
-    type: DataTypes.STRING,
+    type: DataTypes.NUMBER,
     allowNull: false
   },
   salaryAspire: {

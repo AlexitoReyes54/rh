@@ -13,7 +13,7 @@ const workExperience = sequelize.define('work-experience', {
     allowNull: false
   },
   salary: {
-    type: DataTypes.BOOLEAN,
+    type: DataTypes.NUMBER,
     allowNull: false,
     defaultValue:true
   },

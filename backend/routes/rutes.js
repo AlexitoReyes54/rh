@@ -43,7 +43,22 @@ var {
     deleteCandidate,
     putCandidate
     } = require('../controllers/candidateController')
+var {
+    getEmployee,
+    getAllEmployee,
+    addEmployee
+} = require('../controllers/employeeController')
+const {createReport} = require('../helpers/excel')
 
+    router.use(function(req, res, next){
+        console.log('pass');
+          res.header('Access-Control-Allow-Origin', '*');
+          res.header('Access-Control-Allow-Methods', '*');
+          res.header('Access-Control-Allow-Headers', '*');
+          next();
+        });
+
+        
 //competence 
 router.get('/competence',getAllCompentences);
 router.get('/competence/:id',getCompetence);
@@ -86,9 +101,20 @@ router.post('/candidate',addCandidate)
 router.put('/candidate',putCandidate)
 router.delete('/candidate/:id',deleteCandidate)
 
+//employee
+router.get('/employee',getAllEmployee);
+router.get('/employee/:id',getEmployee);
+router.post('/employee',addEmployee)
+
+//game area
 router.get('/',(req,res) =>{
     console.log(req.body);
     res.send('oksss')
 })
+
+router.get('/report',async (req,res) =>{
+    await createReport()
+    res.download("./Excel.xlsx");
+}) 
 
 module.exports = router;
